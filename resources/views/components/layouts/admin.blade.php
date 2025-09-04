@@ -29,6 +29,10 @@
                                    class="@if(request()->routeIs('admin.dashboard')) border-indigo-500 text-gray-900 @else border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 @endif inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium">
                                     Dashboard
                                 </a>
+                                <a href="{{ route('admin.analytics.index') }}" 
+                                   class="@if(request()->routeIs('admin.analytics.*')) border-indigo-500 text-gray-900 @else border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 @endif inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium">
+                                    Analytics
+                                </a>
                                 <a href="{{ route('admin.users.index') }}" 
                                    class="@if(request()->routeIs('admin.users.*')) border-indigo-500 text-gray-900 @else border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 @endif inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium">
                                     Users

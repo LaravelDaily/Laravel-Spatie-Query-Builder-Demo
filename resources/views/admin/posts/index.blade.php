@@ -123,11 +123,6 @@
                                 Published
                             </x-admin.sortable-header>
                         </th>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            <x-admin.sortable-header field="created_at" :current-sort="request('sort')">
-                                Created
-                            </x-admin.sortable-header>
-                        </th>
                         <th scope="col" class="relative px-6 py-3">
                             <span class="sr-only">Actions</span>
                         </th>
@@ -195,9 +190,6 @@
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                             {{ $post->published_at ? $post->published_at->format('M j, Y') : '-' }}
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            {{ $post->created_at->format('M j, Y') }}
-                        </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                             <a href="{{ route('admin.posts.show', $post) }}" 
                                class="text-indigo-600 hover:text-indigo-900">
@@ -207,7 +199,7 @@
                     </tr>
                     @empty
                     <tr>
-                        <td colspan="7" class="px-6 py-4 text-center text-gray-500">
+                        <td colspan="6" class="px-6 py-4 text-center text-gray-500">
                             No posts found matching your criteria.
                         </td>
                     </tr>

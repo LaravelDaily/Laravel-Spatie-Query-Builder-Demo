@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             PostSeeder::class,
+            PostViewSeeder::class, // Seeds 1M post views - takes ~2-3 minutes
         ]);
     }
 }

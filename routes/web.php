@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Settings;
+use App\Http\Controllers\Admin;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -21,12 +22,12 @@ Route::middleware(['auth'])->group(function () {
     
     // Admin routes
     Route::prefix('admin')->name('admin.')->group(function () {
-        Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
-        Route::get('analytics', [App\Http\Controllers\Admin\AnalyticsController::class, 'index'])->name('analytics.index');
-        Route::get('users', [App\Http\Controllers\Admin\UserController::class, 'index'])->name('users.index');
-        Route::get('users/{user}', [App\Http\Controllers\Admin\UserController::class, 'show'])->name('users.show');
-        Route::get('posts', [App\Http\Controllers\Admin\PostController::class, 'index'])->name('posts.index');
-        Route::get('posts/{post}', [App\Http\Controllers\Admin\PostController::class, 'show'])->name('posts.show');
+        Route::get('/', [Admin\DashboardController::class, 'index'])->name('dashboard');
+        Route::get('analytics', [Admin\AnalyticsController::class, 'index'])->name('analytics.index');
+        Route::get('users', [Admin\UserController::class, 'index'])->name('users.index');
+        Route::get('users/{user}', [Admin\UserController::class, 'show'])->name('users.show');
+        Route::get('posts', [Admin\PostController::class, 'index'])->name('posts.index');
+        Route::get('posts/{post}', [Admin\PostController::class, 'show'])->name('posts.show');
     });
 });
 

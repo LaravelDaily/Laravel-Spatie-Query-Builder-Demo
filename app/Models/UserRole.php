@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class UserRole extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'name',
         'description',
